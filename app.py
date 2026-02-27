@@ -34,9 +34,6 @@ if st.button("Générer la voix"):
 st.divider() # Petite ligne pour séparer de la suite
 # ------------------------------------
 
-st.title("AI Music Generation Application") # Ton titre actuel (Photo 75)
-
-
 st.set_page_config(layout="wide")
 
 st.title("AI Music Generation Application")
