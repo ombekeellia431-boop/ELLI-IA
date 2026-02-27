@@ -59,9 +59,7 @@ def generate_simple_lyrics(num_lines: int = 4, seed_word: str = "") -> str:
         else:
             lyrics_lines[target_line_index] = f"{original_line[:-1]} {seed_word}."
 
-    return "
-".join(lyrics_lines)
-
+    return "\n" .join(lyrics_lines)
 def generate_speech_from_lyrics(lyrics_text: str, lang: str = 'en') -> str:
     if not lyrics_text.strip():
         return ""
