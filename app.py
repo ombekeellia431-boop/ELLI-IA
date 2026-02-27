@@ -4,6 +4,23 @@ from music21 import note, stream, tempo, midi, text
 import random
 import os
 from gtts import gTTS # Import gTTS
+# --- AJOUT DE TA VIDÉO ET TON NOM ---
+st.header("Bienvenue dans le studio de ELLI-IA") # Ton nom ici
+st.write("Voici ma musique et ma présentation :")
+
+# Affichage de ta vidéo (assure-toi que le fichier s'appelle bien video.mp4 sur GitHub)
+try:
+    video_file = open('video.mp4', 'rb')
+    video_bytes = video_file.read()
+    st.video(video_bytes)
+except:
+    st.info("Chargement de la vidéo en cours...")
+
+st.divider() # Petite ligne pour séparer de la suite
+# ------------------------------------
+
+st.title("AI Music Generation Application") # Ton titre actuel (Photo 75)
+
 
 st.set_page_config(layout="wide")
 
