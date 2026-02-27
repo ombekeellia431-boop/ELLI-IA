@@ -25,6 +25,25 @@ def generate_light_cloning(text, type_voix):
     tts = gTTS(text=text, lang='fr', slow=(type_voix == "Voix Douce"))
     tts.save("voice_output.mp3")
     return "voice_output.mp3"
+# --- On groupe les réglages ici ---
+st.subheader("🎚️ Réglages Studio")
+col1, col2 = st.columns(2)
+
+with col1:
+    # On ajoute une clé unique 'emo_key' pour éviter les bugs Streamlit
+    emotion = st.select_slider('Émotion de ELLI-IA :', options=['Triste 😢', 'Neutre 😐', 'Énergique 🔥'], key='emo_key')
+
+with col2:
+    puissance = st.slider('Puissance de la voix (%)', 0, 100, 50, key='pow_key')
+
+# Le menu de sélection juste en dessous des curseurs
+option_voix = st.selectbox("Choisis le timbre de voix :", ["Voix Studio", "Voix Concert", "Voix Robot"], key='voice_select_key')
+
+# --- Ensuite vient ton bouton ---
+if st.button("Générer la voix"):
+    # Ici ton code appelle la fonction de génération
+    st.success(f"Génération lancée en mode {emotion} !")
+
 
 if st.button("Générer la voix"):
     # On récupère le texte des paroles que tu as déjà dans ton code
