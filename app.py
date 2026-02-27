@@ -87,9 +87,6 @@ with col2:
     intensite = st.slider('Puissance de la voix (%)', 0, 100, 50)
 
 # --- La suite de ton code actuel (le menu déroulant) ---
-choix_voix = st.selectbox("Choisis le timbre de voix :", ["Voix Studio", "Voix Concert"])
-
-
 st.divider() # Petite ligne pour séparer de la suite
 # -----------------------------------
 st.title("AI Music Generation Application")
