@@ -62,7 +62,7 @@ option_voix = st.selectbox("Choisis le timbre de voix :", ["Voix Studio", "Voix 
 # --- Ensuite vient ton bouton ---
 if st.button("lancer le clonage vocal",key="bouton_voix_unique"):
     # Ici ton code appelle la fonction de génération
-    if st.button("lancer le clonage",key="boutton_unique")
+    if st.button("lancer le clonage",key="boutton_unique"):
 
 
 if st.button("Générer la voix"):
