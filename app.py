@@ -16,6 +16,21 @@ try:
 except:
     st.info("Chargement de la vidéo en cours...")
 
+# --- CLONAGE DE VOIX LÉGER (SIMULATION) ---
+st.subheader("🎙️ Personnalisation de la Voix")
+option_voix = st.selectbox("Choisis le timbre de voix :", ["Voix Studio", "Voix Robot", "Voix Douce"])
+
+def generate_light_cloning(text, type_voix):
+    # On utilise gTTS (déjà présent ligne 6) pour rester léger
+    tts = gTTS(text=text, lang='fr', slow=(type_voix == "Voix Douce"))
+    tts.save("voice_output.mp3")
+    return "voice_output.mp3"
+
+if st.button("Générer la voix"):
+    # On récupère le texte des paroles que tu as déjà dans ton code
+    audio_path = generate_light_cloning("Bienvenue sur elliamusic", option_voix)
+    st.audio(audio_path)
+
 st.divider() # Petite ligne pour séparer de la suite
 # ------------------------------------
 
