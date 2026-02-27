@@ -25,7 +25,31 @@ def generate_light_cloning(text, type_voix):
     return "voice_output.mp3"
 # --- On groupe les réglages ici ---
 st.subheader("🎚️ Réglages Studio")
+col1, col2 = st.columns(# --- CLONAGE DE VOIX LÉGER (SIMULATION) ---
+st.subheader("👤 Personnalisation de la Voix")
+
+# On crée les colonnes pour les curseurs
 col1, col2 = st.columns(2)
+with col1:
+    emotion = st.select_slider('Émotion de ELLI-IA :', options=['Triste 😢', 'Neutre 😐', 'Énergique 🔥'], key='emo_unique')
+
+with col2:
+    puissance = st.slider('Puissance de la voix (%)', 0, 100, 50, key='pow_unique')
+
+# On déplace le choix du timbre ici pour qu'il soit bien placé
+option_voix = st.selectbox("Choisis le timbre de voix :", ["Voix Studio", "Voix Concert", "Voix Robot"], key='timbre_unique')
+
+def generate_light_cloning(text, type_voix):
+    # On utilise gTTS pour rester léger
+    # Astuce : si l'émotion est triste, on ralentit la voix
+    is_slow = (emotion == 'Triste 😢')
+    tts = gTTS(text=text, lang='fr', slow=is_slow)
+    tts.save("voice_output.mp3")
+    return "voice_output.mp3"
+
+if st.button("Générer la voix"):
+    # Ton code actuel de génération...
+    st.success(f"Génération en mode {emotion} terminée !")
 
 with col1:
     # On ajoute une clé unique 'emo_key' pour éviter les bugs Streamlit
