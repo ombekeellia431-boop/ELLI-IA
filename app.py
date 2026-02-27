@@ -89,7 +89,6 @@ with col2:
 # --- La suite de ton code actuel (le menu déroulant) ---
 st.divider() # Petite ligne pour séparer de la suite
 # -----------------------------------
-st.title("AI Music Generation Application")
 st.write("This interactive application allows you to generate music using AI models and download the audio files.")
 
 def generate_simple_melody(num_notes=8, min_pitch=60, max_pitch=72, duration=0.5, bpm=120, lyrics=None):
