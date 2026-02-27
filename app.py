@@ -24,7 +24,7 @@ def generate_light_cloning(text, type_voix):
     tts.save("voice_output.mp3")
     return "voice_output.mp3"
 # --- On groupe les réglages ici ---
-st.subheader("🎚️ Réglages Studio"
+st.subheader("🎚️ Réglages Studio")
 coll, col2 = st.columns(2)
 st.subheader("👤 Personnalisation de la Voix")
 
