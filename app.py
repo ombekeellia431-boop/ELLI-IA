@@ -91,10 +91,7 @@ choix_voix = st.selectbox("Choisis le timbre de voix :", ["Voix Studio", "Voix C
 
 
 st.divider() # Petite ligne pour séparer de la suite
-# ------------------------------------
-
-st.set_page_config(layout="wide")
-
+# -----------------------------------
 st.title("AI Music Generation Application")
 st.write("This interactive application allows you to generate music using AI models and download the audio files.")
 
