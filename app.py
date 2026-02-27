@@ -30,6 +30,24 @@ if st.button("Générer la voix"):
     # On récupère le texte des paroles que tu as déjà dans ton code
     audio_path = generate_light_cloning("Bienvenue sur elliamusic", option_voix)
     st.audio(audio_path)
+# --- Ta section actuelle ---
+st.header("👤 Personnalisation de la Voix")
+
+# --- AJOUTE CES LIGNES ICI ---
+col1, col2 = st.columns(2) # Pour mettre les réglages côte à côte
+
+with col1:
+    emotion = st.select_slider(
+        'Émotion de ELLI-IA :',
+        options=['Triste 😢', 'Neutre 😐', 'Énergique 🔥']
+    )
+
+with col2:
+    intensite = st.slider('Puissance de la voix (%)', 0, 100, 50)
+
+# --- La suite de ton code actuel (le menu déroulant) ---
+choix_voix = st.selectbox("Choisis le timbre de voix :", ["Voix Studio", "Voix Concert"])
+
 
 st.divider() # Petite ligne pour séparer de la suite
 # ------------------------------------
