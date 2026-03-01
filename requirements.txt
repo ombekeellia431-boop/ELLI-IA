@@ -1,4 +1,7 @@
 streamlit
-music21
+music21==9.1.0
 gTTS
 requests
+pydub
+numpy
+moviepy==1.0.3
